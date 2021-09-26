@@ -4,7 +4,7 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
-
+use IEEE.numeric_std.all;
 
 entity multiplexor is 
     port(
@@ -33,12 +33,14 @@ signal aux_s:  std_logic;
         with sel_i select
 
           
+
         aux_s  <=     entry_i(0)        when  "00" ,
                       entry_i(1)        when  "01" ,
                       entry_i(2)        when  "10" ,
                       entry_i(3)        when  "11" ,
-                      '0'               when others;
-        -- enableb?
+        '0'                             when others;
+
+
 
         s_o <= aux_s when en_i = '1' else '0';
 

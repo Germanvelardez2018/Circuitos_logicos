@@ -17,7 +17,9 @@ architecture negador_tb_arq of negador_tb is
 	signal b_tb: std_logic;
 begin
 
-	a_tb <= '1' after 150 ns;
+	a_tb <= '1' after 150 ns, '0' after 400 ns;
+
+
 	
 	DUT: negador
 		port map(

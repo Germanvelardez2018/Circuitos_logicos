@@ -30,7 +30,7 @@ architecture shift_register_arq of shift_register is
     );
     end component;
 
-    signal d: std_logic_vector(0 to N);
+    signal d: std_logic_vector(o to N);
 
 
 

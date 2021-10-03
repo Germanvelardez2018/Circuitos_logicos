@@ -8,6 +8,9 @@ entity negador is
 	);
 end;
 
+
+
+
 architecture negador_arq of negador is
 begin
 	b_o <= not a_i;

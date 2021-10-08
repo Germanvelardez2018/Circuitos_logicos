@@ -45,10 +45,8 @@ begin
 
    
     
-
-
         -- Equivalent MUX using a case statement
-        process(en_i) is
+        process(en_i,num_i) is
             begin
         
                 case en_i is

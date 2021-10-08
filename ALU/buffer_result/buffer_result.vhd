@@ -26,6 +26,7 @@ entity Buffer_result is
 
         result_sum : in std_logic_vector(N-1 downto 0);
         result_log: in std_logic_vector(N-1 downto 0);
+        en_i : in std_logic;
      
 
     --output
@@ -46,19 +47,29 @@ architecture Buffer_result_arch of Buffer_result is
 begin
 
    
+
+
+    
+
+
     
         -- Equivalent MUX using a case statement
-        process is
-            begin
+        buffering :process(en_i) is
+            
+            case en_i is
+                when '1' =>
+                             buffer_loop : for i in 0 to (N-1) loop  -- SE INTEGRAN AMBOS RESULTADOS
+                                                          
+                            num_result_o(i) <= (result_log(i)  or  result_sum(i) );
+                            end loop buffer_loop;
         
-                buffer_loop : for i in 0 to (N-1) loop  -- SE INTEGRAN AMBOS RESULTADOS
-                                                     -- EN LOS BLOQUES LOGICOS Y ARITMETICOS BLOQUEO O DEJO 
-                                                    
-                                                    
-                                                 
-                num_result_o(i) <= (result_log(i)  or  result_sum(i) );
-                end loop buffer_loop;
+                   
+                when others => -- 'U', 'X', '-', etc.
+                             num_result_o <= (others => '0');              -- CONDICIONES INDEFINIDAS
         
-            end process;
+            end case;
+          
+        
+        end process;
 
 end;

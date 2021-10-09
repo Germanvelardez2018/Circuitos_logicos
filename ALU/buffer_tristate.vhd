@@ -46,7 +46,7 @@ architecture Buffer_tristate_arch of Buffer_tristate is
 
 begin
         -- Equivalent MUX using a case statement
-    process(en_i) is
+    process(en_i,data_i) is
             begin
         
                 case en_i is

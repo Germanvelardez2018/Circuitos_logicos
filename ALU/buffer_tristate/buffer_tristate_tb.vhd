@@ -28,7 +28,7 @@ architecture buffer_tristate_tb of buffer_tristate_tb is
 component Buffer_tristate is 
 
   generic(
-      N: natural:= 4
+      N: natural:= 8
   );
   port(
     --input 

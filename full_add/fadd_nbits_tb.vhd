@@ -38,7 +38,7 @@ architecture  fadd_nbits_tb_arch of fadd_nbits_tb is
         carry_in: in std_logic;
 
     --output
-        num_o: out std_logic_vector(N-1 downto 0);
+        num_o: out std_logic_vector(N downto 0);
         carry_out: out std_logic
     );
    end component;
@@ -48,7 +48,7 @@ architecture  fadd_nbits_tb_arch of fadd_nbits_tb is
     signal num_a_tb : std_logic_vector(3 downto 0):= "0000";
     signal num_b_tb : std_logic_vector(3 downto 0):= "0000";
     signal carry_y_tb: std_logic :='0';
-    signal num_res_tb : std_logic_vector(3 downto 0):= "0000";
+    signal num_res_tb : std_logic_vector(4 downto 0):= "00000";
     signal carry_o_tb : std_logic :='0';
    
   begin
@@ -58,8 +58,8 @@ architecture  fadd_nbits_tb_arch of fadd_nbits_tb is
         begin
             ---------------------------
             -- inputs
-             num_a_tb <= std_logic_vector(to_unsigned(1,4));
-             num_b_tb <= std_logic_vector(to_unsigned(0,4));
+             num_a_tb <= std_logic_vector(to_unsigned(5,4));
+             num_b_tb <= std_logic_vector(to_unsigned(5,4));
              carry_y_tb <='0';
 
              wait for 20 ns;
@@ -67,8 +67,8 @@ architecture  fadd_nbits_tb_arch of fadd_nbits_tb is
              ---------------------------
              ---------------------------
             -- inputs
-            num_a_tb <= std_logic_vector(to_unsigned(0,4));
-            num_b_tb <= std_logic_vector(to_unsigned(1,4));
+            num_a_tb <= std_logic_vector(to_unsigned(6,4));
+            num_b_tb <= std_logic_vector(to_unsigned(6,4));
             carry_y_tb <='1';
 
             wait for 20 ns;
@@ -76,8 +76,8 @@ architecture  fadd_nbits_tb_arch of fadd_nbits_tb is
             ---------------------------
             ---------------------------
             -- inputs
-            num_a_tb <= std_logic_vector(to_unsigned(1,4));
-            num_b_tb <= std_logic_vector(to_unsigned(0,4));
+            num_a_tb <= std_logic_vector(to_unsigned(10,4));
+            num_b_tb <= std_logic_vector(to_unsigned(10,4));
             carry_y_tb <='0';
 
             wait for 20 ns;
@@ -85,8 +85,8 @@ architecture  fadd_nbits_tb_arch of fadd_nbits_tb is
             ---------------------------
             ---------------------------
             -- inputs
-            num_a_tb <= std_logic_vector(to_unsigned(1,4));
-            num_b_tb <= std_logic_vector(to_unsigned(0,4));
+            num_a_tb <= std_logic_vector(to_unsigned(16,4));
+            num_b_tb <= std_logic_vector(to_unsigned(16,4));
             carry_y_tb <='1';
 
             wait for 20 ns;

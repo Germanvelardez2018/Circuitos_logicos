@@ -29,7 +29,8 @@ architecture Full_adder_tb_arch of Full_adder_tb is
 
 
 
-
+---------------------
+-- Component
 
     component Full_adder is 
     port(

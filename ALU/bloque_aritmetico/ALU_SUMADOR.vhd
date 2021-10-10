@@ -85,6 +85,6 @@ architecture ALU_SUMADOR_arch of ALU_SUMADOR is
             end generate;
         
                  wire_c(0) <= c_i;   
-                 c_o       <= wire_c(N);
+                 c_o       <= wire_c(N) and (not c_i);    -- solo se activa con aritmetica de sumas
 
 end;

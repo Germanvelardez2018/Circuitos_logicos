@@ -48,8 +48,8 @@ architecture Shifter_reg_tb_arch of Shifter_reg_tb is
 
 -- signal 
 
-signal  en_i_tb: std_logic  := '0';   
-signal  num_i_tb:   std_logic_vector(7 downto 0) := "00010000";
+signal  en_i_tb: std_logic  := '1';   
+signal  num_i_tb:   std_logic_vector(7 downto 0) := "00000001";
 signal  control_i_tb: std_logic_vector(3 downto 0) := "0000";
 
 signal  num_o_tb:   std_logic_vector(7 downto 0);
@@ -71,83 +71,61 @@ begin
         begin
                 -----------------
                 --input
-                
+                num_i_tb <= "00000001";
                 en_i_tb      <='1';
                 control_i_tb <= "0000";   -- 2 desplazamiento a  izquierda
                 wait for 50 ns;
                 -----------------
                 -----------------
                 --input
-                
+                num_i_tb <= "00000001";
                 control_i_tb <= "0001";   -- 2 desplazamiento a  izquierda
                 wait for 50 ns;
                 -----------------
                 -----------------
-                --input            
+                --input
+                num_i_tb <= "00000001";            
                 control_i_tb <= "0010";   -- 2 desplazamiento a  izquierda
                 wait for 50 ns;
                 -----------------
                 -----------------
 
-                --input            
+                --input
+                num_i_tb <= "00000001";            
                 control_i_tb <= "0011";   -- 2 desplazamiento a  izquierda
                 wait for 50 ns;
                 -----------------
                 -----------------
 
                    
-                --input            
-                control_i_tb <= "0100";   -- 2 desplazamiento a  izquierda
+                --input 
+                num_i_tb <= "10000000" ;          
+                control_i_tb <= "1000";   -- 2 desplazamiento a  izquierda
+                wait for 50 ns;
+                -----------------
+                -----------------
+
+                --input 
+                num_i_tb <= "10000000" ;          
+                control_i_tb <= "1011";   -- 2 desplazamiento a  izquierda
                 wait for 50 ns;
                 -----------------
                 -----------------
 
                 --input            
-                control_i_tb <= "0101";   -- 2 desplazamiento a  izquierda
+                num_i_tb <= "10000000";
+                control_i_tb <= "1100";   -- 2 desplazamiento a  izquierda
                 wait for 50 ns;
                 -----------------
                 -----------------
                 
-                --input            
-                control_i_tb <= "0100";   -- 2 desplazamiento a  izquierda
+                --input  
+                num_i_tb <= "10000000" ;         
+                control_i_tb <= "1101";   -- 2 desplazamiento a  izquierda
                 wait for 50 ns;
                 -----------------
                 -----------------
-                
-                --input            
-                control_i_tb <= "0011";   -- 2 desplazamiento a  izquierda
-                wait for 50 ns;
-                -----------------
-                -----------------
-                
-                --input            
-                control_i_tb <= "0010";   -- 2 desplazamiento a  izquierda
-                wait for 50 ns;
-                -----------------
-                -----------------
-
-                control_i_tb <= "1001";   -- 4 desplazamiento a  derecha
-                    wait for 50 ns;
-                    -----------------
-                    -----------------
-                    --input            
-        
-                control_i_tb <= "1010";   -- 3 desplazamiento a  izquierda
-                    wait for 50 ns;
-                    -----------------
-                    -----------------
-                        --input            
-        
-                control_i_tb <= "1011";   -- 3 desplazamiento a  izquierda
-                wait for 50 ns;
-                -----------------
-                -----------------
-                  --input            
-       
-                  control_i_tb <= "1100";   -- 3 desplazamiento a  izquierda
-                  wait for 50 ns;
-                  -----------------
-                  -----------------
+               
         end process;
 
 

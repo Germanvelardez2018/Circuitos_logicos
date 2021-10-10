@@ -70,39 +70,39 @@ begin
                     case ( control_i) is
                         --  corrimientos a la derecha
                         when "1000" =>
-                            num_o <=      std_logic_vector(unsigned(num_i) SRL 0);                    -- PASO DIRECTO SIN MODIFICAR
+                            num_o <=      std_logic_vector(unsigned(num_i) SRL 1);                    -- PASO DIRECTO SIN MODIFICAR
                         when "1001" =>
-                            num_o <=     std_logic_vector(unsigned(num_i) SRL 1);
-                        when "1010" =>
                             num_o <=     std_logic_vector(unsigned(num_i) SRL 2);
-                        when "1011" =>
+                        when "1010" =>
                             num_o <=     std_logic_vector(unsigned(num_i) SRL 3);
-                        when "1100" =>
+                        when "1011" =>
                             num_o <=     std_logic_vector(unsigned(num_i) SRL 4);
-                        when "1101" =>
+                        when "1100" =>
                             num_o <=     std_logic_vector(unsigned(num_i) SRL 5);
-                        when "1110" =>
+                        when "1101" =>
                             num_o <=     std_logic_vector(unsigned(num_i) SRL 6);
-                        when "1111" =>
+                        when "1110" =>
                             num_o <=     std_logic_vector(unsigned(num_i) SRL 7);
+                        when "1111" =>
+                            num_o <=     std_logic_vector(unsigned(num_i) SRL 8);
 
                         -- corrimiento a la izquierda
                         when "0000" =>
-                            num_o <=   std_logic_vector(unsigned(num_i) SLL 0);                     -- PASO DIRECTO SIN MODIFICAR
+                            num_o <=   std_logic_vector(unsigned(num_i) SLL 1);                     -- PASO DIRECTO SIN MODIFICAR
                         when "0001" =>
-                            num_o <=   std_logic_vector(unsigned(num_i) SLL 1);
-                        when "0010" =>
                             num_o <=   std_logic_vector(unsigned(num_i) SLL 2);
-                        when "0011" =>
+                        when "0010" =>
                             num_o <=   std_logic_vector(unsigned(num_i) SLL 3);
-                        when "0100" =>
+                        when "0011" =>
                             num_o <=   std_logic_vector(unsigned(num_i) SLL 4);
-                        when "0101" =>
+                        when "0100" =>
                             num_o <=   std_logic_vector(unsigned(num_i) SLL 5);
-                        when "0110" =>
+                        when "0101" =>
                             num_o <=   std_logic_vector(unsigned(num_i) SLL 6);
-                        when "0111" =>
+                        when "0110" =>
                             num_o <=   std_logic_vector(unsigned(num_i) SLL 7);
+                        when "0111" =>
+                            num_o <=   std_logic_vector(unsigned(num_i) SLL 8);
                 
                         -- opciones no definidas: pasa sin modificaciones
                         when others => -- 'U', 'X', '-', etc.
